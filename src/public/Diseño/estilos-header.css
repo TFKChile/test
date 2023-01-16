@@ -1,0 +1,45 @@
+html{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.LetraTest{
+    text-align: center;
+    padding-left: 50px;
+    
+}
+
+@media(max-width:680px){
+    header{
+        display: flex;
+    }
+
+    .LetraTest{
+        font-size: 70%;
+        flex-direction: column;
+        text-align: center;
+        padding-left: 0;
+        
+        
+    }
+    
+    .logo img{
+        height: 50px;
+        margin-right: 0;
+
+    }
+    
+    nav {
+      padding-left: 10px;
+      display: grid;
+
+    }
+
+    a .icono{
+        padding: none;
+        max-width: 100%;
+        
+    }
+
+
+}

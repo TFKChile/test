@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    <script src="https://kit.fontawesome.com/03fb0f5067.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../Diseño/footer.css">
+
+    <link rel="stylesheet" href="../Diseño/estilo.css">
+
+    <link rel="stylesheet" href="../Diseño/estilos-portada.css">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    
+    <script src="../funciones.js"></script>
+    <script src="../../routes/index.js"></script>
+
+    <style> 
+        
+    </style>
+
+    <title>Document</title>
+  </head>
+  <body class="m-0 row justify-content-center">
+
+<div class="container-fluid"  >
+    <!--
+	<div class="text-center" style="margin-bottom: 14%;" id="div1" >
+
+		<h3>Talla:</h3>
+		<input type="text" class="field" maxlength="4" minlength="1" id="campo1" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" / required=""> <br/>
+		<h3>Altura:</h3>
+		<input type="text" class="field" maxlength="4" minlength="1" id="campo2" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" /> <br/>
+		<h3>Peso:</h3>
+		<input type="text" class="field" maxlength="4" minlength="1" id="campo3" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" /> <br/>
+		<p class="center-content">
+			<input type="button" class="boton" id="primer-boton" value="Siguiente" onclick="cambio_pag(1)" >
+		</p>
+
+	</div>
+    -->
+
+        <div class="container  tamano_div " id="div1"  >
+            <h1 class="text-center texto-preguntas" style="margin-top: 1%;"><strong> Elija la contextura de su cuerpo </strong></h1> 
+            <div class="destacar-palabra"></div>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" style="margin-top: 5%;">  
+            <div class="form-check col">
+                <input class="form-check-input" type="radio" name="contextura" id="contextura1" onclick="cambio_pag(1)" required >
+                <label class="form-check-label" for="contextura1" >
+                <img class="bordes-imagenes" src="../Imagenes/contextura/ectomorfo.png"  alt="">
+                </label>
+            </div>
+            <div class="form-check col ">
+                <input class="form-check-input" type="radio" name="contextura" id="contextura2" onclick="cambio_pag(1)" required>
+                <label class="form-check-label" for="contextura2">
+                <img class="bordes-imagenes" src="../Imagenes/contextura/mesomorfo.png"  alt="">
+                </label>
+            </div>
+            <div class="form-check col ">
+                <input class="form-check-input" type="radio" name="contextura" id="contextura3" onclick="cambio_pag(1)" required>
+                <label class="form-check-label" for="contextura3">
+                <img class="bordes-imagenes" src="../Imagenes/contextura/endomorfo.png" alt="">
+                </label>
+            </div>
+
+        </div>
+        </div>
+        <div class="container  tamano_div " id="div2" style="display: none ;">
+            <h1 class="text-center texto-preguntas" style="margin-top: 1%"><strong> Elija el tipo de abdominal que tiene</strong></h1>
+            <div class="destacar-palabra"></div>
+            <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" style="margin-top: 5%;">  
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="contextura" id="contextura1" onclick="cambio_pag(1)"  >
+                    <label class="form-check-label" for="contextura1" >
+                    <img class="bordes-imagenes" src="../Imagenes/abdominal/a.jpg"  alt="">
+                    </label>
+                </div>
+                <div class="form-check col ">
+                    <input class="form-check-input" type="radio" name="contextura" id="contextura2" onclick="cambio_pag(1)" >
+                    <label class="form-check-label" for="contextura2">
+                    <img class="bordes-imagenes" src="../Imagenes/abdominal/b.jpg"  alt="">
+                    </label>
+                </div>
+                <div class="form-check col ">
+                    <input class="form-check-input" type="radio" name="contextura" id="contextura3" onclick="cambio_pag(1)" >
+                    <label class="form-check-label" for="contextura3">
+                    <img class="bordes-imagenes" src="../Imagenes/abdominal/c.jpg" alt="">
+                    </label>
+                </div>
+    
+            </div>
+        </div>
+        <div class="container  tamano_div  "   id="div3"  style="display:none" >
+        <h1 class="text-center texto-preguntas" style="margin-top: 1%"> <strong> 1.-¿Cúal es su accesorio favorito?</strong> </h1>
+            <div class=" destacar-palabra "> </div>
+                <div class="row row-cols-2 row-cols-md-2 row-cols-xl-4" style="margin-top: 5%;"> 
+                    <div class="form-check col" >
+                        <input class="form-check-input"  value="a"  type="radio" name="pregunta1" id="respuesta1-1" onclick="cambio_pag(1)">
+                        <label class="form-check-label" for="respuesta1-1">
+                            <h2 class="texto-preguntas">a.-Gorras y zapatillas</h2>
+                            <img class="imagen_preguntas margen-imagenes margen-1-linea "  src="../Imagenes/pregunta1/a.jpg"  alt="">
+                        </label>
+                    </div>
+                    <div class="form-check col " >
+                        <input class="form-check-input" value="b" type="radio" name="pregunta1" id="respuesta1-2" onclick="cambio_pag(1)">
+                        <label class="form-check-label" for="respuesta1-2">
+                            <h2 class="texto-preguntas">b.-Reloj (sólo para ver la hora)</h2>
+                            <img class="imagen_preguntas" src="../Imagenes/pregunta1/b.jpg"   alt="">
+                        </label>
+                    </div>
+                    <div class="form-check col " >
+                        <input class="form-check-input"  value="c" type="radio" name="pregunta1" id="respuesta1-3" onclick="cambio_pag(1)">
+                        <label class="form-check-label" for="respuesta1-3">
+                            <h2 class="texto-preguntas">c.-Mancuernas (colleras) y relojes caros</h2>
+                            <img class="imagen_preguntas" src="../Imagenes/pregunta1/c.jpg"   alt="">
+                        </label>
+                    </div>
+                    <div class="form-check col">
+                        <input class="form-check-input"  value="d" type="radio" name="pregunta1" id="respuesta1-4" onclick="cambio_pag(1)">
+                        <label class="form-check-label" for="respuesta1-4">
+                            <h2 class="texto-preguntas ">d.-Bufanda</h2>
+                            <img class="imagen_preguntas margen-imagenes margen-1-linea margen-3lineas-celular margen-1-linea-tablet" src="../Imagenes/pregunta1/d.jpg"  alt="">
+                        </label>
+                    </div>
+                </div>
+                <div class="row row-cols-2 row-cols-md-2 row-cols-xl-4 justify-content-center" style="margin-top: 5%; margin-bottom: -5%;">
+                    <div class="form-check col">
+                        <input class="form-check-input"  value="e" type="radio" name="pregunta1" id="respuesta1-5" onclick="cambio_pag(1)">
+                        <label class="form-check-label" for="respuesta1-5">     
+                            <h2 class="texto-preguntas">e.-Cadenas o collares sobre el pecho </h2>                       
+                            <img class="imagen_preguntas" src="../Imagenes/pregunta1/e.jpg"  alt="">
+                        </label>
+                    </div>
+                    <div class="form-check col ">
+                        <input class="form-check-input"  value="f" type="radio" name="pregunta1" id="respuesta1-6" onclick="cambio_pag(1)">
+                        <label class="form-check-label" for="respuesta1-6">        
+                         <h2 class="texto-preguntas">f.-Piercings o tatuajes</h2>                    
+                        <img class="imagen_preguntas margen-imagenes margen-1-linea "  src="../Imagenes/pregunta1/f.jpg"  alt=""></label>
+                    </div>
+                    <div class="form-check col">
+                        <input class="form-check-input"  value="g" type="radio" name="pregunta1" id="respuesta1-7" onclick="cambio_pag(1)">
+                        <label class="form-check-label" for="respuesta1-7">               
+                        <h2 class="texto-preguntas">g.-Lentes grandes y hebillas llamativas</h2>
+                        <img class="imagen_preguntas " src="../Imagenes/pregunta1/g.jpg" alt="">
+                        </label>
+                    </div>
+                </div>
+
+        </div>
+        <div class="container  tamano_div " id="div4" style="display:none">
+            <h1 class="text-center texto-preguntas" style="margin-top: 1%"> <strong> 2.-En ocasiones corro el riesgo de verme :</strong> </h1>
+            <div class="destacar-palabra"></div>
+            <div class="row row-cols-2 row-cols-md-2 row-cols-xl-4" style="margin-top: 5%;">     
+                    <div class="form-check col">
+                        <input class="form-check-input" value="a" type="radio" name="pregunta2" id="respuesta2-1" onclick="cambio_pag(1)">
+                        <label class="form-check-label" for="respuesta2-1">       
+                            <h2 class="texto-preguntas">a.-Descuidado </h2>                  
+                            <img class="imagen_preguntas" src="../Imagenes/pregunta2/a.jpg" alt="">
+                        </label>
+                    </div>
+                    <div class="form-check col">
+                        <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2-2" onclick="cambio_pag(1)">
+                        <label class="form-check-label" for="respuesta2-2">
+                            <h2 class="texto-preguntas">b.-Aburrido</h2>
+                            <img class="imagen_preguntas" src="../Imagenes/pregunta2/b.jpg" alt="">
+                        </label>
+                    </div>
+                    <div class="form-check col">
+                        <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2-3" onclick="cambio_pag(1)">
+                        <label class="form-check-label" for="respuesta2-3">
+                            <h2 class="texto-preguntas">c.-Cursi</h2>
+                            <img class="imagen_preguntas" src="../Imagenes/pregunta2/c.jpg" alt="">
+                        </label>
+                    </div>
+                    <div class="form-check col">
+                        <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2-4" onclick="cambio_pag(1)">
+                        <label class="form-check-label" for="respuesta2-4">
+                            <h2 class="texto-preguntas">d.-Presuntuoso </h2>
+                            <img class="imagen_preguntas" src="../Imagenes/pregunta2/d.jpg" alt="">
+                        </label>
+                    </div>
+                </div>   
+                <div class="row row-cols-2 row-cols-md-2 row-cols-xl-4 justify-content-center" style="margin-top: 5%; margin-bottom: -5%;">
+                    <div class="form-check col">
+                        <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2-5" onclick="cambio_pag(1)">
+                        <label class="form-check-label" for="respuesta2-5">
+                            <h2 class="texto-preguntas">e.-Vulgar</h2>
+                            <img class="imagen_preguntas" src="../Imagenes/pregunta2/e.jpg" alt="">
+                        </label>
+                    </div>
+                    <div class="form-check col">
+                        <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2-6" onclick="cambio_pag(1)">
+                        <label class="form-check-label" for="respuesta2-6">
+                            <h2 class="texto-preguntas">f.-Ridículo </h2>
+                            <img class="imagen_preguntas" src="../Imagenes/pregunta2/f.jpg" alt="">
+                        </label>
+                    </div>
+                    <div class="form-check col">
+                        <input class="form-check-input" type="radio" name="pregunta2" id="respuesta2-7" onclick="cambio_pag(1)">
+                        <label class="form-check-label" for="respuesta2-7">
+                            <h2 class="texto-preguntas">g.-Agresivo</h2>
+                            <img class="imagen_preguntas" src="../Imagenes/pregunta2/g.jpg" alt="">
+                        </label>
+                    </div>
+            </div>
+        </div>                            
+        <div class="container  tamano_div " id="div5" style="display:none">
+            <h1 class="text-center texto-preguntas" style="margin-top: 1%"> <strong> 3.-Si te voy a regalar unos zapatos, preﬁeres </strong> </h1>   
+            <div class="destacar-palabra"></div>   
+            <div class="row row-cols-2 row-cols-md-2 row-cols-xl-4" style="margin-top: 5%;">
+                <div class="form-check col">
+                    <input class="form-check-input" value="a" type="radio" name="pregunta3" id="respuesta3-1" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta3-1">
+                        <h2 class="texto-preguntas">a.-Tenis (zapatillas) cómodos </h2>
+                        <img class="imagen_preguntas " src="../Imagenes/pregunta3/a.jpg " alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3-2" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta3-2">
+                        <h2 class="texto-preguntas">b.-Zapatos de cordones</h2>
+                        <img class="imagen_preguntas margen-imagenes" src="../Imagenes/pregunta3/b.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3-3" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta3-3">
+                        <h2 class="texto-preguntas">c.-Zapatos de piel suave y suela delgada </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta3/c.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3-4" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta3-4">
+                        <h2 class="texto-preguntas">d.-De gamuza o con suela de goma</h2>
+                        <img class="imagen_preguntas " src="../Imagenes/pregunta3/d.jpg" alt="">
+                    </label>
+                </div>
+            </div>
+            <div class="row row-cols-2 row-cols-md-2 row-cols-xl-4 justify-content-center" style="margin-top: 5%; margin-bottom: -5%;">
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3-5" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta3-5">
+                        <h2 class="texto-preguntas ">e.-Botas vaqueras</h2>
+                        <img class="imagen_preguntas margen-3lineas margen-3lineas-celular" src="../Imagenes/pregunta3/e.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3-6" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta3-6"> 
+                        <h2 class="texto-preguntas">f.-Tenis o zapatos diferentes, con colores atrevidos </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta3/f.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta3" id="respuesta3-7" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta3-7">
+                        <h2 class="texto-preguntas">g.-Zapatos de piel exótica: víbora, cocodrilo</h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta3/g.jpg" alt="">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container  tamano_div " id="div6" style="display:none">
+            <h1 class="text-center texto-preguntas" style="margin-top: 1%"><strong> 4.- Cuando estoy frente a otros (as), busco:</strong> </h1>
+            <div class="destacar-palabra"></div>
+            <div class="row row-cols-2 row-cols-md-2 row-cols-xl-4" style="margin-top: 5%;">
+                <div class="form-check col">
+                    <input class="form-check-input" value="a" type="radio" name="pregunta4" id="respuesta4-1" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta4-1">
+                        <h2 class="texto-preguntas">a.-Ser accesible, entretener </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta4/a.jpg" alt="">    
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4-2" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta4-2">
+                        <h2 class="texto-preguntas ">b.-Ser correcto</h2>
+                        <img class="imagen_preguntas margen-imagenes margen-1-linea SinMargen" src="../Imagenes/pregunta4/b.jpg" alt="">      
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4-3" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta4-3">
+                        <h2 class="texto-preguntas">c.-Ser reservado pero admirado </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta4/c.jpg" alt="">      
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4-4" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta4-4">
+                        <h2 class="texto-preguntas">d.-Servir, atender</h2>
+                        <img class="imagen_preguntas margen-imagenes margen-1-linea" src="../Imagenes/pregunta4/d.jpg" alt="">      
+                    </label>
+                </div>
+            </div>
+            <div class="row row-cols-2 row-cols-md-2 row-cols-xl-4 justify-content-center" style="margin-top: 5%; margin-bottom: -5%;">
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4-5" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta4-5">
+                        <h2 class="texto-preguntas">e.-Ligar (atraer a las mujeres) y ser envidiado </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta4/e.jpg" alt="">      
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4-6" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta4-6">
+                        <h2 class="texto-preguntas">f.-Romper con lo establecido, ser diferente</h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta4/f.jpg" alt="">      
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta4" id="respuesta4-7" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta4-7">
+                        <h2 class="texto-preguntas">g.-Atraer la atención, imponer</h2>
+                        <img class="imagen_preguntas margen-imagenes SinMargen" src="../Imagenes/pregunta4/g.jpg" alt="">      
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container  tamano_div " id="div7" style="display:none">
+            <h1 class="text-center texto-preguntas" style="margin-top: 1%"><strong> 5.- En la ropa busco: </strong></h1>
+            <div class="destacar-palabra"></div>
+            <div class="row row-cols-2 row-cols-md-2 row-cols-xl-4" style="margin-top: 5%;">
+                <div class="form-check col">
+                    <input class="form-check-input" value="a" type="radio" name="pregunta5" id="respuesta5-1" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta5-1">
+                        <h2 class="texto-preguntas">a.-Comodidad  </h2>
+                        <img class="imagen_preguntas margen-imagenes SinMargen" src="../Imagenes/pregunta5/a.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5-2" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta5-2">
+                        <h2 class="texto-preguntas">b.-Durabilidad  </h2>
+                        <img class="imagen_preguntas margen-imagenes SinMargen" src="../Imagenes/pregunta5/b.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5-3" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta5-3">
+                        <h2 class="texto-preguntas">c.-Exclusividad </h2>
+                        <img class="imagen_preguntas margen-imagenes margen-1-linea SinMargen"  src="../Imagenes/pregunta5/c.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5-4" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta5-4"> 
+                        <h2 class="texto-preguntas">d.-Agradar, verme gentil  </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta5/d.jpg" alt="">
+                    </label>
+                </div>
+            </div>
+            <div class="row row-cols-2 row-cols-md-2 row-cols-xl-4 justify-content-center" style="margin-top: 5%; margin-bottom: -5%;">
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5-5" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta5-5">
+                        <h2 class="texto-preguntas">e.-Lucir mi cuerpo </h2>
+                        <img class="imagen_preguntas margen-imagenes SinMargen" src="../Imagenes/pregunta5/e.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5-6" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta5-6">
+                        <h2 class="texto-preguntas">f.-Originalidad </h2>
+                        <img class="imagen_preguntas margen-imagenes SinMargen" src="../Imagenes/pregunta5/f.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta5" id="respuesta5-7" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta5-7">
+                        <h2 class="texto-preguntas">g.-Vanguardia, imponer moda </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta5/g.jpg" alt="">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container  tamano_div " id="div8" style="display:none">
+            <h1 class="text-center texto-preguntas" style="margin-top: 1%"><strong> 6.-El look con el que más me identifico es: </strong></h1>
+            <div class="destacar-palabra"></div>
+            <div class="row row-cols-2 row-cols-md-2 row-cols-xl-4" style="margin-top: 5%;">
+                <div class="form-check col">
+                    <input class="form-check-input" value="a" type="radio" name="pregunta6" id="respuesta6-1" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta6-1">
+                        <h2 class="texto-preguntas ">a.-Jeans, T-shirt, tenis y gorra  </h2>
+                        <img class="imagen_preguntas margen-3lineas SinMargen" src="../Imagenes/pregunta6/a.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta6" id="respuesta6-2" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta6-2">
+                        <h2 class="texto-preguntas">b.-Pantalón, camisa, zapatos sobrios  </h2>
+                        <img class="imagen_preguntas margen-3lineas SinMargen" src="../Imagenes/pregunta6/b.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta6" id="respuesta6-3" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta6-3">
+                        <h2 class="texto-preguntas">c.-Pantalón a la medida, camisa de mancuernas, suéter de cashmere  </h2>
+                        <img class="imagen_preguntas margen-imagenes" src="../Imagenes/pregunta6/c.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta6" id="respuesta6-4" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta6-4">
+                        <h2 class="texto-preguntas">d.-Pantalón de pana, suéter de cuello de tortuga, botas de suela de goma   </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta6/d.jpg" alt="">
+                    </label>
+                </div>
+            </div>
+            <div class="row row-cols-2 row-cols-md-2 row-cols-xl-4 justify-content-center" style="margin-top: 5%; margin-bottom: -5%;">
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta6" id="respuesta6-5" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta6-5">
+                        <h2 class="texto-preguntas">e.-Jeans ajustados, camisa abierta y chaqueta de piel o cuero  </h2>
+                        <img class="imagen_preguntas margen-imagenes" src="../Imagenes/pregunta6/e.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta6" id="respuesta6-6" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta6-6">
+                        <h2 class="texto-preguntas">f.-Pantalones viejos, camisa con diseño, zapatos y cinturones de tela  </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta6/f.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col ">
+                    <input class="form-check-input" type="radio" name="pregunta6" id="respuesta6-7" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta6-7">
+                        <h2 class="texto-preguntas"  >g.-Ropa estructurada, zapatos puntiagudos, sombrero y mascada al cuello  </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta6/g.jpg" alt="">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container  tamano_div " id="div9" style="display:none">
+            <h1 class="text-center texto-preguntas" style="margin-top: 1%"><strong> 7.-Tu peinado y corte ideal es: </strong></h1>
+            <div class="destacar-palabra"></div>
+            <div class="row row-cols-2 row-cols-md-2 row-cols-xl-4" style="margin-top: 5%;">
+                <div class="form-check col">
+                    <input class="form-check-input" value="a" type="radio" name="pregunta7" id="respuesta7-1" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta7-1">
+                        <h2 class="texto-preguntas ">a.-Suelto, natural, fácil de peinar   </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta7/a.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta7" id="respuesta7-2" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta7-2">
+                        <h2 class="texto-preguntas ">b.-Corto y con raya al lado  </h2>
+                        <img class="imagen_preguntas salto-linea-medio" src="../Imagenes/pregunta7/b.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta7" id="respuesta7-3" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta7-3">
+                        <h2 class="texto-preguntas ">c.-Perfectamente peinado y cuidado   </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta7/c.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta7" id="respuesta7-4" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta7-4">
+                        <h2 class="texto-preguntas ">d.-Ondulado sobre la cara  </h2>
+                        <img class="imagen_preguntas salto-linea-medio" src="../Imagenes/pregunta7/d.jpg" alt="">
+                    </label>
+                </div>
+            </div>
+            <div class="row row-cols-2 row-cols-md-2 row-cols-xl-4 justify-content-center" style="margin-top: 5%; margin-bottom: -5%;">
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta7" id="respuesta7-5" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta7-5"> 
+                        <h2 class="texto-preguntas ">e.-Relamido o a la moda   </h2>
+                        <img class="imagen_preguntas " src="../Imagenes/pregunta7/e.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta7" id="respuesta7-6" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta7-6">
+                        <h2 class="texto-preguntas ">f.-Largo o loco y diferente  </h2>
+                        <img class="imagen_preguntas " src="../Imagenes/pregunta7/f.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta7" id="respuesta7-7" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta7-7">
+                        <h2 class="texto-preguntas ">g.-Vanguardista, rígido o rapado a cero  </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta7/g.jpg" alt="">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container  tamano_div " id="div10" style="display:none">
+            <h1 class="text-center texto-preguntas" style="margin-top: 1%"><strong> 8.-Revisa las palabras que mejor describan tu personalidad. Tipos de Estilos </strong></h1>
+            <div class="destacar-palabra"></div>
+            <div class="row row-cols-2 row-cols-md-2 row-cols-xl-4" style="margin-top: 5%;">
+                <div class="form-check col">
+                    <input class="form-check-input" value="a" type="radio" name="pregunta8" id="respuesta8-1" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta8-1">
+                        <h2 class="texto-preguntas ">a.-Casual, sencillo, natural, juvenil    </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta8/a.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta8" id="respuesta8-2" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta8-2">
+                        <h2 class="texto-preguntas ">b.-Conservador, formal, discreto    </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta8/b.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta8" id="respuesta8-3" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta8-3">
+                        <h2 class="texto-preguntas ">c.-Refinado, distinguido, seguro    </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta8/c.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta8" id="respuesta8-4" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta8-4"> 
+                        <h2 class="texto-preguntas ">d.-Gentil, cálido, suave   </h2>
+                        <img class="imagen_preguntas margen-imagenes" src="../Imagenes/pregunta8/d.jpg" alt="">
+                    </label>
+                </div>
+            </div>
+            <div class="row row-cols-2 row-cols-md-2 row-cols-xl-4 justify-content-center" style="margin-top: 5%; margin-bottom: -5%;">
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta8" id="respuesta8-5" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta8-5"> 
+                        <h2 class="texto-preguntas ">e.-Sugestivo, seductor, sexy   </h2>
+                        <img class="imagen_preguntas margen-imagenes margen-1-linea SinMargen" src="../Imagenes/pregunta8/e.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta8" id="respuesta8-6" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta8-6"> 
+                        <h2 class="texto-preguntas ">f.-Artístico, original, imaginativo, divertido   </h2>
+                        <img class="imagen_preguntas margen-imagenes SinMargen" src="../Imagenes/pregunta8/f.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta8" id="respuesta8-7" onclick="cambio_pag(1)">
+                    <label class="form-check-label" for="respuesta8-7">
+                        <h2 class="texto-preguntas ">g.- Moderno, llamativo, vanguardista, sofisticado</h2>
+                        <img class="imagen_preguntas " src="../Imagenes/pregunta8/g.jpg" alt="">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container  tamano_div " id="div11" style="display:none">
+            <h1 class="text-center texto-preguntas" style="margin-top: 1%"><strong>9.- De las siguientes ilustraciones, ¿con qué hombre te identiﬁcas más?  </strong></h1>
+            <div class="destacar-palabra"></div>
+            <div class="row row-cols-2 row-cols-md-2 row-cols-xl-4" style="margin-top: 5%;">
+                <div class="form-check col">
+                    <input class="form-check-input" value="a" type="radio" name="pregunta9" id="respuesta9-1" onclick="respuestas()">
+                    <label class="form-check-label" for="respuesta9-1">
+                        <h2 class="texto-preguntas ">a    </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta9/a.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta9" id="respuesta9-2" onclick="respuestas()">
+                    <label class="form-check-label" for="respuesta9-2">
+                        <h2 class="texto-preguntas ">b    </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta9/b.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta9" id="respuesta9-3" onclick="respuestas()">
+                    <label class="form-check-label" for="respuesta9-3">
+                        <h2 class="texto-preguntas ">c    </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta9/c.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta9" id="respuesta9-4" onclick="respuestas()">
+                    <label class="form-check-label" for="respuesta9-4"> 
+                        <h2 class="texto-preguntas ">d   </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta9/d.jpg" alt="">
+                    </label>
+                </div>
+            </div>
+            <div class="row row-cols-2 row-cols-md-2 row-cols-xl-4 justify-content-center" style="margin-top: 5%; margin-bottom: -5%;">
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta9" id="respuesta9-5" onclick="respuestas()">
+                    <label class="form-check-label" for="respuesta9-5"> 
+                        <h2 class="texto-preguntas ">e   </h2>
+                        <img class="imagen_preguntas " src="../Imagenes/pregunta9/e.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta9" id="respuesta9-6" onclick="respuestas()">
+                    <label class="form-check-label" for="respuesta9-6"> 
+                        <h2 class="texto-preguntas ">f   </h2>
+                        <img class="imagen_preguntas" src="../Imagenes/pregunta9/f.jpg" alt="">
+                    </label>
+                </div>
+                <div class="form-check col">
+                    <input class="form-check-input" type="radio" name="pregunta9" id="respuesta9-7" onclick="respuestas()">
+                    <label class="form-check-label" for="respuesta9-7">
+                        <h2 class="texto-preguntas ">g</h2>
+                        <img class="imagen_preguntas " src="../Imagenes/pregunta9/g.jpg" alt="">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container  tamano_div "  id="RespuestaA" style="display:none">
+            <h1 class="textos text-center" style="margin-bottom: 3%; margin-top: 1%;">Resultados Test De Estilo Masculino</h1>
+            <div class="row justify-content-center" >
+                <div class="col " style="border: 0 solid black;">
+                    <h5 class="textos">
+                        Hola <br> 
+                        Gracias por realizar este Test de Estilo Masculino. 
+                        Aquí te dejo el resultado y de regalo algunas ideas para usar en el día a día.
+                        <br> <br>
+                        Tu estilo es NATURAL y……….
+                        <br> <br>
+                        Eres una persona que busca la comodidad y de una apariencia amigable y relajada. <br>
+                        ¿Quieres sabes más de este estilo? 
+                        Y, además, de recibir un práctico regalo “5 días de looks para potenciar tu estilo” 
+                        Sí, recibirás una tenida inspirada en tu estilo cada día, por 5 días, así poder inspirarte y tener más
+                        opciones para vestir arreglado y de acuerdo a tu estilo y esencia. <br><br>
+
+                        Déjame tu correo y recibirás un correo mío los siguientes 5 días. <br> <br>
+
+                        Saludos Karinna
+                        </h5>
+                        <form action="/send-email-a" method="post">
+                            <h3 style="margin-left: 10%; margin-top: 3%;margin-bottom: 5%;">  ingrese su correo </h3>
+                            <input type="email" name="mail" class="field" />
+                            <center>
+                            
+                            <button class="boton" >Enviar</button>
+                        </center>
+                        </form>
+                </div>
+                <div class="col ">
+                    <div class=" container">
+                    <img class="imagenes_respuestas" style="margin-right: 1%;box-shadow: none;margin-top: 5%;border-radius: 10px;border: 3px solid #a4a4a4;" src="../Imagenes/Respuestas/a.jpg" width="500" height="450">
+                </div>
+                </div>
+        </div>
+        </div>
+        <div class="container  tamano_div "  id="RespuestaB" style="display:none">
+            <h1 class="text-center textos" style="margin-bottom: 3%;margin-top: 1%">Resultados Test De Estilo Masculino</h1>
+            <div class="row" >
+                <div class="col " style="border: 0 solid black;">
+                    <h5 class="textos">
+                        Hola <br>
+                        Gracias por realizar este Test de Estilo Masculino. 
+                        Aquí te dejo el resultado y de regalo algunas ideas para usar en el día a día. <br><br>
+                        
+                        Tu estilo es TRADICIONAL y………. <br> <br>
+                        Eres una persona que busca no llamar la atención y de una apariencia seria y formal. Vestir con
+                        pantalón de vestir o chino y camisa tradicional, es lo ideal para ti. <br><br>
+                        
+                        ¿Quieres sabes más de este estilo?
+                        Y, además, de recibir un práctico regalo “5 días de looks para potenciar tu estilo” 
+                        Sí, recibirás una tenida inspirada en tu estilo cada día, por 5 días, así poder inspirarte y tener más opciones para vestir arreglado y de acuerdo a tu estilo y esencia.
+                        
+                        Déjame tu correo y recibirás un correo mío los siguientes 5 días.
+                        <br> <br>
+                        
+
+                        Saludos Karinna
+                        </h5>
+                        <form action="/send-email-b" method="post">
+                            <h3 style="margin-left: 10%; margin-top: 3%;margin-bottom: 5%;">  ingrese su correo </h3>
+                            <input type="email" name="mail" class="field" />
+                            <center>
+                            
+                            <button class="boton" >Enviar</button>
+                        </center>
+                        </form>
+                </div>
+                <div class="col ">
+                    <div class=" container">
+                    <img class="imagenes_respuestas" style="margin-right: 1%;box-shadow: none;margin-top: 5%;border-radius: 10px;border: 3px solid #a4a4a4;" src="../Imagenes/Respuestas/b.jpg" width="500" height="450">
+                </div>
+                </div>
+        </div>
+        </div>
+        <div class="container  tamano_div "  id="RespuestaC" style="display:none">
+            <h1 class="text-center textos" style="margin-bottom: 3%;margin-top: 1%">Resultados Test De Estilo Masculino</h1>
+            <div class="row" >
+                <div class="col " style="border: 0 solid black;">
+                    <h5 class="textos">
+                        Hola <br>
+                        Gracias por realizar este Test de Estilo Masculino. <br> 
+                        Aquí te dejo el resultado y de regalo algunas ideas para usar en el día a día. <br><br>
+                        
+                        Tu estilo es ELEGANTE y……….  <br> <br>
+                        Eres una persona que tiene una apariencia refinada y sofisticada. Vestir para ti es sinónimo de 
+                        calidad y lujo. <br><br>
+                        
+                        ¿Quieres sabes más de este estilo?  
+                        Y, además, de recibir un práctico regalo “5 días de looks para potenciar tu estilo” 
+                        Sí, recibirás una tenida inspirada en tu estilo cada día, por 5 días, así poder inspirarte y tener más
+                        opciones para vestir arreglado y de acuerdo a tu estilo y esencia. <br><br>
+                        
+                        Déjame tu correo y recibirás un correo mío los siguientes 5 días. <br><br>
+
+                        Saludos Karinna
+                        </h5>
+                        <form action="/send-email-c" method="post">
+                            <h3 style="margin-left: 10%; margin-top: 3%;margin-bottom: 5%;">  ingrese su correo </h3>
+                            <input type="email" name="mail" class="field" />
+                            <center>
+                            
+                            <button class="boton" >Enviar</button>
+                        </center>
+                        </form>
+                </div>
+                <div class="col ">
+                    <div class=" container">
+                    <img class="imagenes_respuestas" style="margin-right: 1%;box-shadow: none;margin-top: 5%;border-radius: 10px;border: 3px solid #a4a4a4;" src="../Imagenes/Respuestas/c.jpg" width="500" height="450">
+                </div>
+                </div>
+        </div>
+        </div>
+        <div class="container  tamano_div "  id="RespuestaD" style="display:none">
+            <h1 class="text-center textos" style="margin-bottom: 3%;margin-top: 1%">Resultados Test De Estilo Masculino</h1>
+            <div class="row" >
+                <div class="col " style="border: 0 solid black;">
+                    <h5 class="textos">
+                        Hola <br>
+                        Gracias por realizar este Test de Estilo Masculino. 
+                        Aquí te dejo el resultado y de regalo algunas ideas para usar en el día a día. <br><br>
+                        
+                        Tu estilo es ROMÁNTICO y………. <br> <br>
+                        Eres una persona de apariencia cálida y bondadosa. Al vestir buscas calidez y suavidad. Una de tus 
+                        paciones es la literatura o poesía. <br><br>
+                        
+                        ¿Quieres sabes más de este estilo? 
+                        Y, además, de recibir un práctico regalo “5 días de looks para potenciar tu estilo” 
+                        Sí, recibirás una tenida inspirada en tu estilo cada día, por 5 días, así poder inspirarte y tener más 
+                         opciones para vestir arreglado y de acuerdo a tu estilo y esencia. <br><br>
+                        
+                        Déjame tu correo y recibirás un correo mío los siguientes 5 días. <br><br>
+                        
+                        
+                        Saludos Karinna
+                        </h5>
+                        <form action="/send-email-d" method="post">
+                            <h3 style="margin-left: 10%; margin-top: 3%;margin-bottom: 5%;">  ingrese su correo </h3>
+                            <input type="email" name="mail" class="field" />
+                            <center>
+                            
+                            <button class="boton" >Enviar</button>
+                        </center>
+                        </form>
+                </div>
+                <div class="col ">
+                    <div class=" container">
+                    <img class="imagenes_respuestas" style="margin-right: 1%;box-shadow: none;margin-top: 5%;border-radius: 10px;border: 3px solid #a4a4a4;" src="../Imagenes/Respuestas/d.jpg" width="500" height="450">
+                </div>
+                </div>
+        </div>
+        </div>
+        <div class="container  tamano_div "  id="RespuestaE" style="display:none">
+            <h1 class="text-center textos" style="margin-bottom: 3%;margin-top: 1%">Resultados Test De Estilo Masculino</h1>
+            <div class="row" >
+                <div class="col " style="border: 0 solid black;">
+                    <h5 class="textos">
+                        Hola <br>
+                        Gracias por realizar este Test de Estilo Masculino. 
+                        Aquí te dejo el resultado y de regalo algunas ideas para usar en el día a día. <br><br>
+                        
+                        Tu estilo es SEDUCTOR y………. <br> <br>
+                        Eres una persona de apariencia sugestiva y atrayente. Al vestir buscas llamar la atención y atraer al 
+                         sexo opuesto. <br><br>
+                        
+                        ¿Quieres sabes más de este estilo? 
+                        Y, además, de recibir un práctico regalo “5 días de looks para potenciar tu estilo” 
+                        Sí, recibirás una tenida inspirada en tu estilo cada día, por 5 días, así poder inspirarte y tener más
+                        opciones para vestir arreglado y de acuerdo a tu estilo y esencia. <br><br>
+                        
+                        Déjame tu correo y recibirás un correo mío los siguientes 5 días. <br><br>
+                        
+                        
+                        
+                        Saludos Karinna
+                        </h5>
+                        <form action="/send-email-e" method="post">
+                            <h3 style="margin-left: 10%; margin-top: 3%;margin-bottom: 5%;">  ingrese su correo </h3>
+                            <input type="email" name="mail" class="field" />
+                            <center>
+                            
+                            <button class="boton" >Enviar</button>
+                        </center>
+                        </form>
+                </div>
+                <div class="col ">
+                    <div class=" container">
+                    <img class="imagenes_respuestas" style="margin-right: 1%;box-shadow: none;margin-top: 5%;border-radius: 10px;border: 3px solid #a4a4a4;" src="../Imagenes/Respuestas/e.jpg" width="500" height="450">
+                </div>
+                </div>
+        </div>
+        </div>
+        <div class="container  tamano_div "  id="RespuestaF" style="display:none">
+            <h1 class="text-center textos" style="margin-bottom: 3%;margin-top: 1%">Resultados Test De Estilo Masculino</h1>
+            <div class="row" >
+                <div class="col " style="border: 0 solid black;">
+                    <h5 class="textos">
+                        Hola <br>
+                        Gracias por realizar este Test de Estilo Masculino. 
+                        Aquí te dejo el resultado y de regalo algunas ideas para usar en el día a día. <br><br>
+                        
+                        Tu estilo es CREATIVO y………. <br> <br>
+                        Eres una persona de apariencia artística y original. Al vestir buscas verte diferentes y salir de lo 
+                        establecido y convencional, combinar diferentes texturas y estilo es lo tuyo. <br><br>
+                        
+                        ¿Quieres sabes más de este estilo? 
+                        Y, además, de recibir un práctico regalo “5 días de looks para potenciar tu estilo” 
+                        Sí, recibirás una tenida inspirada en tu estilo cada día, por 5 días, así poder inspirarte y tener más 
+                         opciones para vestir arreglado y de acuerdo a tu estilo y esencia. <br><br>
+                        
+                        Déjame tu correo y recibirás un correo mío los siguientes 5 días.
+                        <br> <br>
+                            
+                        Saludos Karinna
+                        </h5>
+                        <form action="/send-email-f" method="post">
+                            <h3 style="margin-left: 10%; margin-top: 3%;margin-bottom: 5%;">  ingrese su correo </h3>
+                            <input type="email" name="mail" class="field" />
+                            <center>
+                            
+                            <button class="boton" >Enviar</button>
+                        </center>
+                        </form>
+                </div>
+                <div class="col ">
+                    <div class=" container">
+                    <img class="imagenes_respuestas" style="margin-right: 1%;box-shadow: none;margin-top: 5%;border-radius: 10px;border: 3px solid #a4a4a4;" src="../Imagenes/Respuestas/f.jpg" width="500" height="450">
+                </div>
+                </div>
+        </div>
+        </div>
+        <div class="container  tamano_div "  id="RespuestaG" style="display:none">
+            <h1 class="text-center textos" style="margin-bottom: 3%;margin-top: 1%">Resultados Test De Estilo Masculino</h1>
+            <div class="row" >
+                <div class="col " style="border: 0 solid black;">
+                    <h5 class="textos">
+                        Hola <br>
+                        Gracias por realizar este Test de Estilo Masculino. 
+                        Aquí te dejo el resultado y de regalo algunas ideas para usar en el día a día. <br><br>
+                        
+                        Tu estilo es DRAMÁTICO y………. <br> <br>
+                        Eres una persona de apariencia dominante y sofisticada. Al vestir buscas impactar y eres algo 
+                        exagerado para vestir. <br><br>
+                        
+                        ¿Quieres sabes más de este estilo? 
+                        Y, además, de recibir un práctico regalo “5 días de looks para potenciar tu estilo” 
+                        Sí, recibirás una tenida inspirada en tu estilo cada día, por 5 días, así poder inspirarte y tener más  
+                        opciones para vestir arreglado y de acuerdo a tu estilo y esencia. <br><br>
+                        
+                        Déjame tu correo y recibirás un correo mío los siguientes 5 días. <br><br>
+                        
+                            
+                        Saludos Karinna
+                        </h5>
+                        <form action="/send-email-g" method="post">
+                            <h3 style="margin-left: 10%; margin-top: 3%;margin-bottom: 5%;">  ingrese su correo </h3>
+                            <input type="email" name="mail" class="field" />
+                            <center>
+                            
+                            <button class="boton" >Enviar</button>
+                        </center>
+                        </form>
+                </div>
+                <div class="col ">
+                    <div class=" container">
+                    <img class="imagenes_respuestas" style="margin-right: 1%;box-shadow: none;margin-top: 5%;border-radius: 10px;border: 3px solid #a4a4a4;" src="../Imagenes/Respuestas/g.jpg" width="500" height="450">
+                </div>
+                </div>
+        </div>
+        </div>
+</div>
+<footer class="pie" style="margin-left: 0%;margin-top: 6%;background-color: #d4d9d7;">
+    <div class="header">
+        <div class="logo">
+         <a href="https://karinnabello.com/" target="_blank" class="logo" >
+          <img src="../Imagenes/footer/logo.png" alt="logo" height="100px" style="box-shadow: none;margin-top: 5%;">
+           
+        </a>  
+        
+    </div>
+ <nav class="icono " style="margin-right: 10%;">
+    
+    
+    <a href="https://www.instagram.com/karinna_bello/?hl=es" class="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://cl.linkedin.com/in/karinnabello" class="linkedin" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://www.tiktok.com/@karinna.bello?lang=es" class="tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+    <a href="https://www.facebook.com/asesoriadeimagenkarinnabello" class="facebook " target="_blank"><i class="fa-brands fa-square-facebook"></i> </a>
+      
+ </nav>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,131 @@
+
+body{
+    margin: 0;
+    background: rgb(255, 255, 255);
+    font-family: 'Roboto', sans-serif;
+}
+
+:root{
+    --facebook: #264483;
+    --instagram: #c51d34;
+    --tiktok:    rgb(0, 0, 0);
+    --linkedin: #0e76a8;
+}
+
+
+footer .header{
+    background-color: #d4d9d7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+footer .icono{
+    margin-right: 100px;
+
+}
+
+.logo{
+    margin-left: 100px;
+}
+
+
+
+nav a{
+    padding: 0 10px;
+    background-color: rgb(255, 255, 255);
+    line-height: 60px;
+    align-items: center;
+    cursor: pointer;
+    font-size: 30px;
+    box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.2);
+    transition: 0.2s ease;
+    border-radius: 15%;
+    margin-bottom: 0px;
+}
+
+nav a.facebook{
+    background-color: #6f6d6d;
+    color: white;
+}
+nav a.instagram{
+    background-color: #6f6d6d;
+    color: white;
+}
+
+nav a.linkedin{
+    background-color: #6f6d6d;
+    color: white;
+}
+nav a.tiktok{
+    background-color: #6f6d6d;
+    color: white;
+}
+
+
+
+
+nav:hover a{
+    filter: blur(2px);
+}
+
+
+nav a:hover{
+    transform: translateY(-31px) scale(1.05);
+    box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.5);
+    filter: none;
+}
+
+nav .facebook:hover{
+    color:white;
+    background: var(--facebook);
+}
+nav .instagram:hover{
+    color: white;
+    background: var(--instagram);
+}
+nav .linkedin:hover{
+    color:white;
+    background: var(--linkedin);
+}
+
+
+
+
+@media(max-width:680px){
+
+    footer .header{
+       
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 10px;
+    }
+
+    footer .logo {
+        height: 0px;
+        margin-left: 0px;
+        padding-bottom: 100px;
+        padding-top: 28px;
+        
+    }
+    
+    nav {
+      padding-left: 100px;
+      display: flex;
+      padding-top: 50px;
+      align-items: center;
+      
+
+    }
+    nav a{
+        line-height: 20px;
+        font-size: 30px;  
+        background-color: rgb(160, 160, 160);
+        padding: 4px;
+        
+
+    }
+    
+
+}
